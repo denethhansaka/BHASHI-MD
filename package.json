@@ -1,12 +1,12 @@
 {
-  "name": "BHASHI-MD",
+  "name": "DENETH-MD",
   "version": "1.0.0",
-  "description": "BHASHI-MD MULTI DEVICE WHATSAPP BOT BY VISHWA MIHIRANGA AND BHASHITHA",
+  "description": "DENETH-MD MULTI DEVICE WHATSAPP BOT BY DENETH HANSAKA KEERTHIRATHNA",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name BHASHI-MD",
-    "stop": "pm2 stop BHASHI-MD",
-    "restart": "pm2 restart BHASHI-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name DENETH-MD",
+    "stop": "pm2 stop DENETH-MD",
+    "restart": "pm2 restart DENETH-MD"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
