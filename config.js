@@ -1,131 +1,195 @@
-const fs = require("fs");
-require("dotenv").config();
+const fs = require('fs');
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
 
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
 module.exports = {
-  //==========================================- MAIN - CONFIGS -==================================================================
-  SESSION_ID: process.env.SESSION_ID || "gmlEQQgK#I3p8_RkDchmZYAjNsuKWATOwQIJjyJW6C_ReK7-4oMY",
-  // ADD Your Session Id 
-  MONGODB: process.env.MONGODB || "",
-    // ADD Your MongoDB Database URL
-  PREFIX: process.env.PREFIX || ".",
-  // Add Your Custom Prefix 
-  mode: process.env.mode || "public",
-  // Add Your Bot Mode 
-  // private = Only Working For Owner Number
-  // public = AnyOne Working
-  // inbox = Only Working  Inbox
-  // groups = only working in group
-  OWNER_NUMBER: process.env.OWNER_NUMBER || "94761864425",
-  //========================================- OTHER - CONFIGS -=====================================================================
-  NSFW_CMD: process.env.NSFW_CMD || "false",
-  MONGODB: process.env.MONGODB || "mongodb+srv://vishwamihi22:vishwamihi22@cluster0.y6r9gav.mongodb.net/",
-  TIMEZONE: process.env.TIMEZONE || "Asia/Colombo",
-  AUTO_VOICE: process.env.AUTO_VOICE || "false",
-  AUTO_BIO: process.env.AUTO_BIO || "false",
-  ANTI_BAD_WORDS_ENABLED: process.env.ANTI_BAD_WORDS_ENABLED || "true",
-  AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
-  ANTI_BAD_WORDS: (process.env.ANTI_BAD_WORDS || "pakayo,huththo").split(','),
-  ANTI_LINK: process.env.ANTILINK || "false",
-  ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
-  ALWAYS_TYPING: process.env.ALWAYS_TYPING || "false",
-  ALWAYS_RECORDING: process.env.ALWAYS_RECORDING || "false",
-  ANTI_BOT: process.env.ANTI_BOT || "true",
-  ANTI_DELETE: process.env.ANTI_DELETE || "true",
-  packname: process.env.packname || "DENETH-MD",
-  author: process.env.author || "DENETH-MD",
-  //==========================================- API-CONFIGS -==========================================================
-  OPENWEATHER_API_KEY: process.env.OPENWEATHER_API_KEY || "2d61a72574c11c4f36173b627f8cb177", //openweathermap.org
-  ELEVENLABS_API_KEY: process.env.ELEVENLABS_API_KEY || "sk_6438bcc100d96458f8de0602aec662f4ba14b905fd090ad3", //elevenlabs.io
-  SHODAN_API: process.env.SHODAN_API || "cbCkidr6qd7AFVaYs56MuCouGfM8gFki", //developer.shodan.io
-  PEXELS_API_KEY: process.env.PEXELS_API_KEY || "39WCzaHAX939xiH22NCddGGvzp7cgbu1VVjeYUaZXyHUaWlL1LFcVFxH", // pexels.com
-  OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
-  PIXABAY_API_KEY: process.env.PIXABAY_API_KEY || "23378594-7bd620160396da6e8d2ed4d53", // pixabay.com
-  ZIPCODEBASE_API_KEY: process.env.ZIPCODEBASE_API_KEY || "0f94a5f0-6ea4-11ef-81da-579be4fb031c", // zipcodebase.com
-  GOOGLE_API_KEY: process.env.GOOGLE_API_KEY || "AIzaSyD93IeJsouK51zjKgyHAwBIAlqr-a8mnME", 
-  GOOGLE_CX: process.env.GOOGLE_CX || "AIzaSyD93IeJsouK51zjKgyHAwBIAlqr-a8mnME", 
-  PASTEBIN_API_KEY: process.env.PASTEBIN_API_KEY || "uh8QvO6vQJGtIug9WvjdTAPx_ZAFJAxn",
+//--------------------------------//--------------------------------//
+SESSION_ID: process.env.SESSION_ID=`UnMzxK7Z#IU0NOFrFff_yC-vHdEkBHlys5ySNDy9S1ZyTAVd8A_Q`,
+//--------------------------------//--------------------------------//
+PREFIX: process.env.PREFIX=`.`,
+//--------------------------------//--------------------------------//
+ALIVE_IMG: process.env.ALIVE_IMG=`https://telegra.ph/file/d8279f4ca5da23bda7da4.jpg`,
+ALIVE_MSG: process.env.ALIVE_MSG=`*𝗛𝗘𝗟𝗟𝗢 𝗜𝗠 𝗔𝗟𝗜𝗩𝗘 𝗡𝗢𝗪*
+
+A Bhashi Md Whatsapp Bot Based Thirt Party Application Provide Many Servise With A Teal Time Automated Conversational Experience. Enjoy.
+
+Help : https://wa.me/94761864425`,
+//--------------------------------//--------------------------------//
+PEXELS_API_KEY: process.env.PEXELS_API_KEY='39WCzaHAX939xiH22NCddGGvzp7cgbu1VVjeYUaZXyHUaWlL1LFcVFxH',
 
 
 
 
+//--------------------------------//--------------------------------//
+MENU_IMG: process.env.MENU_IMG=`https://telegra.ph/file/d9649350faf1dd9410580.jpg`,
+MENU_MSG: process.env.MENU_MSG=`‎Hello I'm Bhashi MD Your Frendly Bot Assistant. This is My All In One Commands Menu. Here All The Commands Are Arranged in Order. Type You Need Command And Send Me.
+
+Example : You Need "Main Commands" Send Me ".mainmenu" Then You Will Get "Main Commands"
 
 
+📂 𝗺𝗮𝗶𝗻𝗺𝗲𝗻𝘂
+       You Can Get Main Commands.
+
+📥 𝗱𝗹𝗺𝗲𝗻𝘂
+       You Can Get Download Commands.
+
+⚙️ 𝗰𝗼𝘃𝗲𝗿𝘁𝗺𝗲𝗻𝘂
+       You Can Get Convert Commands.
+
+🤖 𝗮𝗶𝗺𝗲𝗻𝘂
+       You Can Get Ai Commands.
+
+🐼 𝗳𝘂𝗻𝗺𝗲𝗻𝘂
+       You Can Get Fun Commands.
+
+🔍 𝘀𝗲𝗮𝗿𝗰𝗵𝗺𝗲𝗻𝘂
+       You Can Get Search Commands.
+
+🕵🏻 𝗼𝘄𝗻𝗲𝗿𝗺𝗲𝗻𝘂
+       You Can Get Owner Commands.
 
 
+Contact Bhashi : https://wa.me/94761864425`,
 
 
+MAIN_MENU: process.env.MAIN_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Main Commands List. Enjoi Now.
 
 
+📂 𝗮𝗹𝗶𝘃𝗲
+       Show if The Bot is Online.
+
+📂 𝘀𝘆𝘀𝘁𝗲𝗺
+       Disply System Information.
+
+📂 𝗽𝗶𝗻𝗴
+       Ping The Bot And Shows Response Time
 
 
+Contact DENETH : https://wa.me/94761864425`
 
 
+DL_MENU: process.env.DL_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Download Commands List. Enjoi Now.
 
 
+📥 𝘀𝗼𝗻𝗴
+       You Can Download Songs.
+
+📥 𝘃𝗶𝗱𝗲𝗼
+       You Can Download Videos.
 
 
+Contact Bhashi : https://wa.me/94761864425`
 
 
-
- //================ OWNERS ONLY DONT GO =================
-
+CONVERT_MENU: process.env.CONVERT_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Convert Commands List. Enjoi Now.
 
 
+⚙️ 𝗦𝘁𝗶𝗰𝗸𝗲𝗿
+       Convert Img To Sticker.
+
+⚙️ 𝘁𝗿𝘁
+       Translate Any Language.
+
+⚙️ 𝗰𝗼𝗻𝘃𝗲𝗿𝘁
+       Covert Currency To Currency.
+
+⚙️ 𝗴𝗽𝗮𝘀𝘀
+       Genarate Strong Password.
 
 
+Contact Bhashi : https://wa.me/94761864425`
 
 
+AI_MENU: process.env.AI_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Ai Commands List. Enjoi Now.
 
 
+🤖 𝗮𝗶
+       Chat With Chat GPT Ai.
+
+🤖 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲
+       You Can Use Ai Genarater.
 
 
+Contact Bhashi : https://wa.me/94761864425`
 
 
+FUN_MENU: process.env.FUN_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Convert Commands List. Enjoi Now.
 
 
+🐼 𝗷𝗼𝗸𝗲
+       Tell a Random Joke.
+
+🐼 𝗳𝗮𝗰𝘁
+       Give a Rendom Fact.
+
+🐼 𝗵𝗮𝗰𝗸
+       Hacking Device Massages.
+
+🐼 𝘄𝗮𝗹𝗹𝗽𝗮𝗽𝗲𝗿
+       Get Rendom 4K Wallpaper.
+
+🐼 𝗮𝗻𝗶𝗺𝗲𝗴𝗶𝗿𝗹
+       Get Sexy Anime Girl Image.
+
+🐼 𝗮𝗻𝗶𝗺𝗲𝗯𝗼𝘆
+       Gey Anime Boy Image.
+
+🐼 𝗱𝗼𝗴
+       Get Rendom Dog Image.
+
+🐼 𝗿𝘃𝗶𝗱𝗲𝗼
+       Get Rendom HD Video.
 
 
+Contact Bhashi : https://wa.me/94786328485`
 
 
+SEARCH_MENU: process.env.SEARCH_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Search Commands List. Enjoi Now.
 
 
+🔍 𝗱𝗲𝗳𝗶𝗻𝗲
+       Search From Dictionary.
+
+🔍 𝗺𝗼𝘃𝗶𝗲
+       Get Movie Information.
+
+🔍 𝗴𝗶𝘁𝗵𝘂𝗯𝘀𝘁𝗮𝗹𝗸
+       Get Github Profile Information.
+
+🔍 𝘀𝗿𝗲𝗽𝗼
+       Search Repo Details.
+
+🔍 𝘄𝗲𝗮𝘁𝗵𝗲𝗿
+       Fatches Weather Information.
 
 
-  START_MSG: process.env.START_MSG || `
-        ★ *ＢＨＡＳＨＩ-ＭＤ* ★
-    ╴ *ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡᴀ ʙᴏᴛ 🇱🇰* ╴
-
-    \`A fast and responsive multi-device WhatsApp bot built using Baileys and various APIs. It offers seamless functionality without buttons, delivering quick and efficient performance for automated tasks and commands.\`
-
-> 🚨 *ꜰᴏʟʟᴏᴡ ᴜꜱ* : https://whatsapp.com/channel/0029VaSaZd5CBtxGawmSph1k
-
-> 🪄 *ꜱᴜᴘᴘᴏʀᴛᴇʀ ɢʀᴏᴜᴘ* :
-
-> 👾 *ʀᴇᴘᴏ ʟɪɴᴋ* : https://github.com/BhashiMD/BhashiMD/
-
-` ,
-
-  ALIVE_IMG: process.env.ALIVE_IMG || "https://telegra.ph/file/d8279f4ca5da23bda7da4.jpg",
-  MENU_IMG: process.env.MENU_IMG || "https://i.ibb.co/hRw1XK4/image.png",
-  MENU_MSG: process.env.MENU_MSG || `*乂  ＬＩＳＴ  ＭＥＮＵ*
-
-Please Reply The Number You Want To Select.
-
-*❯❯   .01*   Main Commands.
-*❯❯   .02*   Download Commands.
-*❯❯   .03*   Convert Commands.
-*❯❯   .04*   Ai Commands.
-*❯❯   .05*   Search Commands.
-*❯❯   .06*   Fun Commands.
-*❯❯   .07*   18+ Commands.
-*❯❯   .08*   Useful Commands.
-*❯❯   .09*   Logo Commands.
-*❯❯   .10*   Movie Commands.
-*❯❯   .11*   Anime Commands.
-*❯❯   .12*   News Commands.
-*❯❯   .13*   Group Commands.
-*❯❯   .14*   Premium Commands.
-*❯❯   .15*   Owner Commands. `,
+Contact Bhashi : https://wa.me/94786328485`
 
 
+OWNER_MENU: process.env.OWNER_MENU=`‎‎Hello I'm Deneth MD Your Frendly Bot Assistant. This is My Owner Commands List. But This Commands Use Can Bhashi MD Owner Only. Enjoi Now.
+
+
+🕵🏻 𝗿𝗲𝘀𝘁𝗮𝗿𝘁
+       Restart The Bhashi MD.
+
+🕵🏻 𝘀𝗲𝘁𝗮𝘂𝘁𝗼𝗯𝗶𝗼
+       Set Auto Bio On Bot Status.
+
+🕵🏻 𝗷𝗼𝗶𝗻
+       Join Group Invite Link.
+
+
+Contact Bhashi : https://wa.me/94761864425`
+
+
+//--------------------------------//--------------------------------//
+MAIN_MENU: process.env.MAIN_MENU=`‎`
+
+//--------------------------------//--------------------------------//
+OMDB_API_KEY: process.env.OMDB_API_KEY="76cb7f39",
+//--------------------------------//--------------------------------//
+MODE: process.env.MODE="public"
+//--------------------------------//--------------------------------//    
 };
